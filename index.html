@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rishta.com - India's #1 Free Matrimony Website. Find your perfect life partner from 50,000+ verified profiles. Safe, secure & free to join.">
+<meta name="keywords" content="free matrimony site india, shaadi website, rishta online, marriage website india, find life partner">
+<title>Rishta.com - India's Trusted Free Matrimony Website</title>
+<link rel="manifest" href="manifest.json">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- HEADER (paste header.html content here or use JS include) -->
+<div id="header-placeholder"></div>
+
+<!-- ============ HERO SECTION ============ -->
+<section class="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-inner">
+
+      <!-- Left: Text -->
+      <div class="hero-text">
+        <div class="hero-badge anim-fade-up">🏆 India's #1 Free Matrimony Platform</div>
+        <h1 class="hero-title anim-fade-up anim-delay-1">
+          Find Your <span class="highlight">Perfect Life Partner</span> Today
+        </h1>
+        <p class="hero-sub anim-fade-up anim-delay-2">
+          Search from 50,000+ verified profiles. Join free, stay safe, and find the one who is truly right for you.
+        </p>
+        <div class="hero-ctas anim-fade-up anim-delay-3">
+          <button class="btn btn-gold btn-lg" onclick="openModal('registerModal')">✨ Register Free</button>
+          <a href="search.html" class="btn btn-outline-white btn-lg">🔍 Browse Profiles</a>
+        </div>
+        <div class="hero-stats anim-fade-up anim-delay-4">
+          <div class="stat"><div class="stat-num">50K+</div><div class="stat-lbl">Active Profiles</div></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><div class="stat-num">12K+</div><div class="stat-lbl">Happy Couples</div></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><div class="stat-num">25+</div><div class="stat-lbl">States</div></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><div class="stat-num">98%</div><div class="stat-lbl">Verified</div></div>
+        </div>
+      </div>
+
+      <!-- Right: Search Card -->
+      <div class="hero-card anim-fade-up anim-delay-2">
+        <h3>🔍 Find Your Match</h3>
+        <p>Use filters to find your perfect partner</p>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:18px">
+          <div class="form-row">
+            <div class="form-group"><label>I am a</label><select class="form-control"><option>👨 Male</option><option>👩 Female</option></select></div>
+            <div class="form-group"><label>Looking for</label><select class="form-control"><option>👩 Female</option><option>👨 Male</option></select></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Age (Min)</label><select class="form-control"><option>22</option><option>24</option><option>26</option><option>28</option><option>30</option></select></div>
+            <div class="form-group"><label>Age (Max)</label><select class="form-control"><option>28</option><option>30</option><option>32</option><option>35</option><option>40</option></select></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Religion</label><select class="form-control"><option>Any</option><option>Hindu</option><option>Muslim</option><option>Sikh</option><option>Christian</option><option>Jain</option></select></div>
+            <div class="form-group"><label>City</label><select class="form-control"><option>Any</option><option>Delhi</option><option>Mumbai</option><option>Bangalore</option><option>Hyderabad</option><option>Pune</option></select></div>
+          </div>
+          <a href="search.html" class="btn btn-primary btn-full btn-lg" style="margin-top:4px">🔍 Search Profiles</a>
+          <div class="divider">or register to get personalized matches</div>
+          <div style="display:flex;gap:10px">
+            <button class="btn btn-outline" style="flex:1" onclick="openModal('registerModal')">📧 Email</button>
+            <button class="btn btn-outline" style="flex:1" onclick="openModal('registerModal')">📱 Phone</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section class="section-pad bg-off-white" id="why">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">⭐ Why Choose Us</div>
+      <h2 class="section-title">Why <span>Rishta.com</span> is Different</h2>
+      <p class="section-subtitle">We make finding your life partner safe, simple, and free — no hidden charges ever.</p>
+    </div>
+    <div class="grid-3 why-grid">
+      <div class="why-card">
+        <div class="why-icon">✅</div>
+        <h3>100% Free Registration</h3>
+        <p>No hidden charges. Create your profile completely free and start finding matches today.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🛡️</div>
+        <h3>Verified Profiles Only</h3>
+        <p>Every profile is manually reviewed. Zero fake profiles. Genuine people, genuine intent.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔒</div>
+        <h3>Privacy Protected</h3>
+        <p>Your phone number stays hidden until you choose to share it. Full control over your data.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🤖</div>
+        <h3>AI Match Suggestions</h3>
+        <p>Our AI engine analyzes your preferences and suggests the most compatible profiles for you.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">⭐</div>
+        <h3>Horoscope Matching</h3>
+        <p>Free Kundali Milan and horoscope compatibility check — traditional values met with technology.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💬</div>
+        <h3>Easy Communication</h3>
+        <p>Chat, send interest, and view contacts — all in one platform. WhatsApp integration included.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED PROFILES ============ -->
+<section class="section-pad" id="featured">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">💑 New Members</div>
+      <h2 class="section-title">Today's <span>Featured Profiles</span></h2>
+      <p class="section-subtitle">Recently joined verified members looking for their life partner</p>
+    </div>
+    <div class="grid-4" id="featuredGrid"></div>
+    <div style="text-align:center;margin-top:40px">
+      <a href="search.html" class="btn btn-primary btn-lg">🔍 View All Profiles</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUCCESS STORIES ============ -->
+<section class="section-pad stories-section" id="stories">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag" style="background:rgba(212,160,23,0.15);color:var(--gold)">💕 Success Stories</div>
+      <h2 class="section-title" style="color:white">Couples Who Found <span style="color:var(--gold)">Love on Rishta.com</span></h2>
+      <p class="section-subtitle" style="color:rgba(255,255,255,0.6)">Real people, real stories — matched through Rishta.com</p>
+    </div>
+    <div class="grid-3">
+      <div class="story-card">
+        <div class="hearts">❤️❤️❤️</div>
+        <div class="story-couple">
+          <div class="couple-photos"><div class="couple-photo">👨</div><div class="couple-photo" style="margin-left:-12px">👩</div></div>
+          <div><div class="couple-names">Rahul & Priya</div><div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:2px">📍 Delhi → Jaipur</div></div>
+        </div>
+        <p class="story-quote">"I created my profile on Rishta.com and within 2 months I found Priya. We have been happily together for 2 years now. Thank you Rishta.com!"</p>
+        <div class="story-date">💍 Married: March 2024</div>
+      </div>
+      <div class="story-card">
+        <div class="hearts">💕💕💕</div>
+        <div class="story-couple">
+          <div class="couple-photos"><div class="couple-photo">👩</div><div class="couple-photo" style="margin-left:-12px">👨</div></div>
+          <div><div class="couple-names">Sneha & Vikram</div><div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:2px">📍 Mumbai → Pune</div></div>
+        </div>
+        <p class="story-quote">"I was hesitant about online matrimony, but Rishta.com's verified profiles gave me the confidence. Sneha became my life partner!"</p>
+        <div class="story-date">💍 Married: November 2023</div>
+      </div>
+      <div class="story-card">
+        <div class="hearts">🌹🌹🌹</div>
+        <div class="story-couple">
+          <div class="couple-photos"><div class="couple-photo">👨</div><div class="couple-photo" style="margin-left:-12px">👩</div></div>
+          <div><div class="couple-names">Arjun & Kavitha</div><div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:2px">📍 Bangalore → Chennai</div></div>
+        </div>
+        <p class="story-quote">"Different cities, same values. The AI match suggestion is what started our story. Best matrimony platform in India!"</p>
+        <div class="story-date">💍 Married: January 2024</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px">
+      <a href="success-stories.html" class="btn btn-outline-white btn-lg">Read More Stories →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MEMBERSHIP PLANS ============ -->
+<section class="section-pad" id="plans">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">💎 Membership</div>
+      <h2 class="section-title">Simple, Transparent <span>Pricing</span></h2>
+      <p class="section-subtitle">Choose a plan that fits your needs. Start free, upgrade when you're ready.</p>
+    </div>
+    <div class="plans-grid">
+      <div class="plan-card">
+        <div class="plan-icon">🌱</div>
+        <div class="plan-name">Basic</div>
+        <div class="plan-price"><sup>₹</sup>199</div>
+        <div class="plan-duration">1 Month</div>
+        <ul class="plan-features">
+          <li><span class="check">✓</span> View 2 Contact Numbers</li>
+          <li><span class="check">✓</span> Unlimited Profile Views</li>
+          <li><span class="check">✓</span> Send Interests</li>
+          <li><span class="check">✓</span> Limited Chat</li>
+          <li><span class="cross">✗</span> Profile Boost</li>
+          <li><span class="cross">✗</span> Video Calls</li>
+        </ul>
+        <button class="btn btn-outline btn-full" onclick="openModal('registerModal')">Get Started</button>
+      </div>
+      <div class="plan-card popular">
+        <div class="plan-badge">⭐ Most Popular</div>
+        <div class="plan-icon">💎</div>
+        <div class="plan-name">Premium</div>
+        <div class="plan-price"><sup>₹</sup>499</div>
+        <div class="plan-duration">3 Months</div>
+        <ul class="plan-features">
+          <li><span class="check">✓</span> View 4 Contact Numbers</li>
+          <li><span class="check">✓</span> Unlimited Profile Views</li>
+          <li><span class="check">✓</span> Priority Interests</li>
+          <li><span class="check">✓</span> Unlimited Chat</li>
+          <li><span class="check">✓</span> 1 Profile Boost</li>
+          <li><span class="check">✓</span> 2 Video Calls/Month</li>
+        </ul>
+        <button class="btn btn-gold btn-full" onclick="openModal('registerModal')">Get Started ⭐</button>
+      </div>
+      <div class="plan-card">
+        <div class="plan-icon">👑</div>
+        <div class="plan-name">Platinum</div>
+        <div class="plan-price"><sup>₹</sup>999</div>
+        <div class="plan-duration">6 Months</div>
+        <ul class="plan-features">
+          <li><span class="check">✓</span> View 6 Contact Numbers</li>
+          <li><span class="check">✓</span> Unlimited Profile Views</li>
+          <li><span class="check">✓</span> VIP Priority Match</li>
+          <li><span class="check">✓</span> Unlimited Chat + WhatsApp</li>
+          <li><span class="check">✓</span> 3 Profile Boosts</li>
+          <li><span class="check">✓</span> Unlimited Video Calls</li>
+        </ul>
+        <button class="btn btn-primary btn-full" onclick="openModal('registerModal')">Get Started 👑</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOG ============ -->
+<section class="section-pad bg-off-white" id="blog">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">📝 Blog</div>
+      <h2 class="section-title">Marriage & <span>Relationship Tips</span></h2>
+      <p class="section-subtitle">Expert advice on finding the right partner and building a strong marriage</p>
+    </div>
+    <div class="grid-3">
+      <div class="blog-card">
+        <div class="blog-thumb">💍</div>
+        <div class="blog-body">
+          <div class="blog-cat">Matrimony Guide</div>
+          <h3 class="blog-title">Top 5 Free Matrimony Sites in India 2024 — Which One is Best?</h3>
+          <p class="blog-excerpt">We compare India's most popular matrimony websites and tell you what to look for when searching for a life partner online...</p>
+          <div class="blog-meta"><i class="fa fa-calendar"></i> March 15, 2024 &nbsp;·&nbsp; <i class="fa fa-clock"></i> 5 min read</div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-thumb">❤️</div>
+        <div class="blog-body">
+          <div class="blog-cat">Relationship Tips</div>
+          <h3 class="blog-title">How to Choose a Life Partner in Arrange Marriage — 10 Essential Tips</h3>
+          <p class="blog-excerpt">Arrange marriage is a big decision. These 10 tips will help you find the right partner. Family values, compatibility and communication are key...</p>
+          <div class="blog-meta"><i class="fa fa-calendar"></i> March 8, 2024 &nbsp;·&nbsp; <i class="fa fa-clock"></i> 7 min read</div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-thumb">🛡️</div>
+        <div class="blog-body">
+          <div class="blog-cat">Online Safety</div>
+          <h3 class="blog-title">How to Stay Safe on Online Matrimony Sites — Avoid Scams</h3>
+          <p class="blog-excerpt">Online matrimony can be safe if you choose the right platform and follow these 8 essential tips. Learn how to identify fake profiles...</p>
+          <div class="blog-meta"><i class="fa fa-calendar"></i> March 1, 2024 &nbsp;·&nbsp; <i class="fa fa-clock"></i> 6 min read</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px">
+      <a href="blog.html" class="btn btn-outline btn-lg">View All Articles →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA SECTION ============ -->
+<section class="cta-section">
+  <div class="cta-pattern"></div>
+  <div class="container" style="position:relative;z-index:1;text-align:center">
+    <h2 class="cta-title">Ready to Find Your Soulmate? 💑</h2>
+    <p class="cta-sub">Join 50,000+ happy members — completely free!</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <button class="btn btn-white btn-lg" onclick="openModal('registerModal')">✨ Register Now — Free</button>
+      <a href="search.html" class="btn btn-outline-white btn-lg">🔍 Browse Profiles</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<!-- PAGE-SPECIFIC CSS -->
+<style>
+body { padding-top: var(--navbar-height); }
+
+/* Hero */
+.hero {
+  min-height: 100vh; padding: 80px 0 60px;
+  background: linear-gradient(135deg, #1A0A0A 0%, #2D1515 40%, #4A1A1A 100%);
+  position: relative; overflow: hidden; display: flex; align-items: center;
+}
+.hero-pattern {
+  position: absolute; inset: 0; opacity: 0.04;
+  background-image: repeating-linear-gradient(45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%);
+  background-size: 20px 20px; pointer-events: none;
+}
+.hero-glow {
+  position: absolute; width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(212,160,23,0.12), transparent 70%);
+  top: 50%; left: 50%; transform: translate(-50%,-50%);
+  pointer-events: none; animation: pulse 4s ease-in-out infinite;
+}
+.hero-inner {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(212,160,23,0.15); border: 1px solid rgba(212,160,23,0.3);
+  color: var(--gold-light); font-size: 13px; font-weight: 600;
+  padding: 8px 18px; border-radius: 50px; margin-bottom: 20px;
+}
+.hero-title {
+  font-family: var(--font-display); font-size: clamp(32px, 4.5vw, 58px);
+  font-weight: 900; color: white; line-height: 1.12; margin-bottom: 20px;
+}
+.highlight {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.hero-sub { font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 30px; }
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
+.hero-stats { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.stat { text-align: center; }
+.stat-num { font-family: var(--font-display); font-size: 26px; font-weight: 900; color: var(--gold-light); }
+.stat-lbl { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 2px; }
+.stat-divider { width: 1px; height: 36px; background: rgba(255,255,255,0.15); }
+
+/* Hero Card */
+.hero-card {
+  background: rgba(255,255,255,0.97); border-radius: 24px;
+  padding: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.hero-card h3 { font-family: var(--font-display); font-size: 20px; color: var(--red); margin-bottom: 4px; }
+.hero-card > p { font-size: 13px; color: var(--gray); }
+
+/* Why cards */
+.bg-off-white { background: var(--off-white); }
+.why-grid { margin-top: 0; }
+.why-card {
+  background: white; border-radius: var(--radius); padding: 30px;
+  box-shadow: var(--shadow); border: 1px solid var(--border);
+  transition: all 0.3s; text-align: center; position: relative; overflow: hidden;
+}
+.why-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--red), var(--gold)); }
+.why-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.why-icon { width: 66px; height: 66px; margin: 0 auto 18px; background: linear-gradient(135deg, rgba(192,57,43,0.09), rgba(212,160,23,0.09)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; }
+.why-card h3 { font-family: var(--font-display); font-size: 18px; color: var(--dark); margin-bottom: 10px; }
+.why-card p { font-size: 14px; color: var(--gray); line-height: 1.65; }
+
+/* Stories */
+.stories-section { background: linear-gradient(135deg, #1A1A2E 0%, #2D1515 100%); }
+.stories-section .section-title { color: white; }
+.story-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 26px; transition: all 0.3s; }
+.story-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); }
+.hearts { font-size: 18px; margin-bottom: 14px; }
+.story-couple { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+.couple-photos { display: flex; }
+.couple-photo { width: 48px; height: 48px; border-radius: 50%; border: 3px solid var(--gold); background: linear-gradient(135deg, #F8D7DA, #FFF3CD); display: flex; align-items: center; justify-content: center; font-size: 20px; }
+.couple-names { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: white; }
+.story-quote { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.7; font-style: italic; }
+.story-date { font-size: 12px; color: var(--gold); margin-top: 14px; font-weight: 600; }
+
+/* Plans */
+.plans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 900px; margin: 0 auto; }
+
+/* Blog */
+.blog-card { background: white; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border); transition: all 0.3s; }
+.blog-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.blog-thumb { height: 170px; background: linear-gradient(135deg, #FDECEA, #FFF8E7); display: flex; align-items: center; justify-content: center; font-size: 52px; }
+.blog-body { padding: 20px; }
+.blog-cat { font-size: 11px; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: 1px; }
+.blog-title { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--dark); margin-top: 8px; margin-bottom: 10px; line-height: 1.4; }
+.blog-excerpt { font-size: 13px; color: var(--gray); line-height: 1.6; }
+.blog-meta { display: flex; align-items: center; gap: 6px; margin-top: 14px; font-size: 12px; color: var(--gray); }
+.blog-meta i { color: var(--red); }
+
+/* CTA */
+.cta-section { background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%); padding: 80px 0; position: relative; overflow: hidden; }
+.cta-pattern { position: absolute; inset: 0; opacity: 0.05; background-image: repeating-linear-gradient(45deg, white 0, white 1px, transparent 0, transparent 50%); background-size: 20px 20px; }
+.cta-title { font-family: var(--font-display); font-size: clamp(26px, 4vw, 46px); color: white; font-weight: 900; margin-bottom: 14px; }
+.cta-sub { font-size: 18px; color: rgba(255,255,255,0.8); margin-bottom: 36px; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+  .hero-ctas { justify-content: center; }
+  .hero-stats { justify-content: center; }
+  .hero-badge { display: inline-flex; }
+  .hero-card { max-width: 480px; margin: 0 auto; }
+  .plans-grid { grid-template-columns: 1fr; max-width: 420px; }
+}
+@media (max-width: 600px) {
+  .hero { padding: 60px 0 50px; min-height: auto; }
+  .hero-title { font-size: 30px; }
+  .stat-divider { display: none; }
+  .hero-stats { gap: 16px; }
+  .stat-num { font-size: 22px; }
+  .plans-grid { max-width: 100%; }
+  .cta-title { font-size: 24px; }
+}
+</style>
+
+<!-- SCRIPTS -->
+<script>
+// Profile data
+const profiles = [
+  {id:1,name:"Priya Sharma",age:26,city:"Delhi",religion:"Hindu",profession:"Software Engineer",edu:"B.Tech",photo:"👩",caste:"Brahmin",height:"5'4\"",salary:"8 LPA",bio:"I am a software engineer based in Delhi looking for a simple and loving partner who values family.",gender:"female"},
+  {id:2,name:"Anjali Verma",age:24,city:"Mumbai",religion:"Hindu",profession:"Doctor",edu:"MBBS",photo:"👩",caste:"Kshatriya",height:"5'3\"",salary:"12 LPA",bio:"A doctor in Mumbai seeking a balanced family life. I love yoga and classical music.",gender:"female"},
+  {id:3,name:"Riya Patel",age:28,city:"Ahmedabad",religion:"Jain",profession:"CA",edu:"CA",photo:"👩",caste:"Patel",height:"5'2\"",salary:"10 LPA",bio:"Chartered Accountant in a reputed firm. Family values are very important to me.",gender:"female"},
+  {id:4,name:"Sneha Reddy",age:25,city:"Hyderabad",religion:"Hindu",profession:"Teacher",edu:"M.Ed",photo:"👩",caste:"Reddy",height:"5'5\"",salary:"5 LPA",bio:"School teacher with a passion for education. Simple life and strong family values are my priority.",gender:"female"},
+  {id:5,name:"Rahul Gupta",age:28,city:"Bangalore",religion:"Hindu",profession:"Data Scientist",edu:"M.Tech",photo:"👨",caste:"Brahmin",height:"5'10\"",salary:"18 LPA",bio:"Data scientist at a top tech firm. I love long walks, coffee, and genuine conversations.",gender:"male"},
+  {id:6,name:"Arjun Singh",age:31,city:"Pune",religion:"Hindu",profession:"Manager",edu:"MBA",photo:"👨",caste:"Rajput",height:"6'0\"",salary:"25 LPA",bio:"MBA from IIM. Corporate professional but family comes first. Seeking a loving and stable relationship.",gender:"male"},
+  {id:7,name:"Vikram Nair",age:29,city:"Chennai",religion:"Hindu",profession:"Engineer",edu:"B.Tech",photo:"👨",caste:"Nair",height:"5'11\"",salary:"14 LPA",bio:"Civil engineer working on infrastructure projects. Honest, caring, family-oriented person.",gender:"male"},
+  {id:8,name:"Fatima Khan",age:27,city:"Lucknow",religion:"Muslim",profession:"Architect",edu:"B.Arch",photo:"👩",caste:"Sunni",height:"5'4\"",salary:"7 LPA",bio:"Passionate architect designing beautiful spaces. Seeking a partner who appreciates art and creativity.",gender:"female"},
+];
+
+function profileCard(p) {
+  const bg = p.gender==='female' ? 'linear-gradient(135deg,#FDECEA,#FFF3CD)' : 'linear-gradient(135deg,#E8F8F5,#EBF5FB)';
+  return `<div class="profile-card" onclick="location.href='profile.html?id=${p.id}'">
+    <div class="profile-photo-wrap" style="background:${bg}">${p.photo}</div>
+    <div class="profile-card-body">
+      <div class="profile-name">${p.name}</div>
+      <div class="verified">✅ Verified Profile</div>
+      <div class="profile-meta">🎂 ${p.age} yrs &nbsp;|&nbsp; 📍 ${p.city}<br>💼 ${p.profession} &nbsp;|&nbsp; 📚 ${p.edu}</div>
+      <div class="profile-tags">
+        <span class="profile-tag">${p.religion}</span>
+        <span class="profile-tag gold">${p.caste}</span>
+        <span class="profile-tag">${p.height}</span>
+      </div>
+      <div class="profile-card-actions">
+        <button class="btn-interest" onclick="event.stopPropagation();showToast('Interest sent! ❤️')">❤️ Interest</button>
+        <button class="btn-view-profile" onclick="event.stopPropagation();location.href='profile.html?id=${p.id}'">View Profile</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+// Render featured profiles
+document.addEventListener('DOMContentLoaded', () => {
+  const grid = document.getElementById('featuredGrid');
+  if(grid) grid.innerHTML = profiles.slice(0,4).map(profileCard).join('');
+
+  // Load header/footer via fetch (when served from a server)
+  // For GitHub Pages, the header/footer are inlined — see combined file
+});
+
+// Notification after delay
+setTimeout(() => showNotif('💑','New Match Found!','Priya Sharma viewed your profile and sent you an interest!'), 9000);
+</script>
+
+<!-- Load header.html and footer.html content -->
+<script>
+// Simple HTML include for static sites
+async function loadHTML(id, file) {
+  try {
+    const r = await fetch(file);
+    if(r.ok) document.getElementById(id).innerHTML = await r.text();
+  } catch(e) { console.log('Include not loaded:', file); }
+}
+loadHTML('header-placeholder','header.html');
+loadHTML('footer-placeholder','footer.html');
+</script>
+
+</body>
+</html>
