@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - RishtaBandhan</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .match-card {
+      background: white; border-radius: 12px; padding: 16px;
+      display: flex; align-items: center; gap: 16px;
+      box-shadow: var(--shadow); border: 1px solid var(--border);
+      margin-bottom: 16px; transition: transform 0.2s;
+    }
+    .match-card:hover { transform: translateX(4px); }
+    .match-card img {
+      width: 60px; height: 60px; border-radius: 50%;
+      object-fit: cover; border: 2px solid var(--primary);
+    }
+    .match-pct {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; font-weight: 700; color: var(--primary);
+    }
+    .inbox-item {
+      background: white; border-radius: 12px; padding: 16px;
+      display: flex; align-items: center; gap: 16px;
+      border: 1px solid var(--border); margin-bottom: 12px;
+    }
+    .inbox-item.unread { border-left: 4px solid var(--primary); background: #fff8f8; }
+    .inbox-avatar {
+      width: 48px; height: 48px; border-radius: 50%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar" style="position:fixed">
+    <div class="nav-container">
+      <a href="index.html" class="logo"><span class="logo-icon">❤</span><span class="logo-text">RishtaBandhan</span></a>
+      <div class="nav-actions" style="margin-left:auto">
+        <span id="navUserName" style="font-weight:600;color:var(--text-light);font-size:0.9rem"></span>
+        <a href="index.html" class="btn btn-outline" onclick="logout()">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <div style="padding:24px 24px 12px;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:12px">
+        <div id="sidebarUser" style="text-align:center">
+          <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;font-size:1.8rem;color:white;margin:0 auto 12px"></div>
+          <div id="sidebarName" style="color:white;font-weight:700;font-size:0.95rem"></div>
+          <div id="sidebarMembership" style="font-size:0.75rem;margin-top:4px;padding:3px 10px;border-radius:12px;display:inline-block"></div>
+        </div>
+      </div>
+      <ul class="dash-menu">
+        <li><a href="#" class="active" onclick="showSection('overview')"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href="#" onclick="showSection('matches')"><i class="fas fa-heart"></i> My Matches</a></li>
+        <li><a href="#" onclick="showSection('interests')"><i class="fas fa-paper-plane"></i> Interests Sent</a></li>
+        <li><a href="#" onclick="showSection('received')"><i class="fas fa-inbox"></i> Interests Received</a></li>
+        <li><a href="#" onclick="showSection('saved')"><i class="fas fa-bookmark"></i> Saved Profiles</a></li>
+        <li><a href="#" onclick="showSection('messages')"><i class="fas fa-comments"></i> Messages</a></li>
+        <li><a href="#" onclick="showSection('profile')"><i class="fas fa-user-edit"></i> Edit Profile</a></li>
+        <li><a href="#" onclick="showSection('settings')"><i class="fas fa-cog"></i> Settings</a></li>
+        <li><a href="index.html#membership"><i class="fas fa-crown" style="color:var(--gold)"></i> Upgrade Plan</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      
+      <!-- Overview Section -->
+      <div id="section-overview">
+        <div class="dash-header">
+          <h1>Namaste, <span id="welcomeName">User</span>! 👋</h1>
+          <p style="color:var(--text-light)">Aapke liye aaj ke best matches ready hain</p>
+        </div>
+
+        <div class="stats-cards">
+          <div class="stat-card">
+            <div class="stat-card-icon" style="background:linear-gradient(135deg,#ff6b6b,#ee5a24)">
+              <i class="fas fa-heart" style="color:white"></i>
+            </div>
+            <div>
+              <div class="stat-card-num" id="statInterestsSent">0</div>
+              <div class="stat-card-label">Interests Bheje</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-icon" style="background:linear-gradient(135deg,#a29bfe,#6c5ce7)">
+              <i class="fas fa-inbox" style="color:white"></i>
+            </div>
+            <div>
+              <div class="stat-card-num">3</div>
+              <div class="stat-card-label">Interests Mile</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-icon" style="background:linear-gradient(135deg,#55efc4,#00b894)">
+              <i class="fas fa-bookmark" style="color:white"></i>
+            </div>
+            <div>
+              <div class="stat-card-num" id="statSaved">0</div>
+              <div class="stat-card-label">Saved Profiles</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-icon" style="background:linear-gradient(135deg,#fdcb6e,#e17055)">
+              <i class="fas fa-eye" style="color:white"></i>
+            </div>
+            <div>
+              <div class="stat-card-num">47</div>
+              <div class="stat-card-label">Profile Views</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile Completeness -->
+        <div style="background:white;border-radius:16px;padding:28px;box-shadow:var(--shadow);margin-bottom:28px;border:1px solid var(--border)">
+          <h3 style="margin-bottom:16px;color:var(--secondary)">Profile Completeness</h3>
+          <div class="progress-bar"><div class="progress-fill" style="--target-width:65%"></div></div>
+          <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:0.85rem;color:var(--text-light)">
+            <span>65% Complete</span>
+            <a href="#" onclick="showSection('profile')" style="color:var(--primary);font-weight:600">Complete Now →</a>
+          </div>
+          <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:8px">
+            <span style="padding:6px 12px;background:#d5f5e3;color:#1e8449;border-radius:20px;font-size:0.8rem"><i class="fas fa-check"></i> Basic Info</span>
+            <span style="padding:6px 12px;background:#d5f5e3;color:#1e8449;border-radius:20px;font-size:0.8rem"><i class="fas fa-check"></i> Education</span>
+            <span style="padding:6px 12px;background:#fadbd8;color:#922b21;border-radius:20px;font-size:0.8rem"><i class="fas fa-times"></i> Photo Upload</span>
+            <span style="padding:6px 12px;background:#fadbd8;color:#922b21;border-radius:20px;font-size:0.8rem"><i class="fas fa-times"></i> ID Verify</span>
+          </div>
+        </div>
+
+        <!-- Today's Matches -->
+        <div style="background:white;border-radius:16px;padding:28px;box-shadow:var(--shadow);border:1px solid var(--border)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+            <h3 style="color:var(--secondary)">Aaj Ke Matches</h3>
+            <a href="profiles.html" style="color:var(--primary);font-size:0.85rem;font-weight:700">Sab Dekhein →</a>
+          </div>
+          <div id="todayMatches"></div>
+        </div>
+      </div>
+
+      <!-- Matches Section -->
+      <div id="section-matches" style="display:none">
+        <div class="dash-header"><h1>My Matches 💕</h1></div>
+        <div class="profiles-grid" id="dashMatches"></div>
+      </div>
+
+      <!-- Interests Sent -->
+      <div id="section-interests" style="display:none">
+        <div class="dash-header"><h1>Interests Bheje <i class="fas fa-paper-plane" style="color:var(--primary)"></i></h1></div>
+        <div id="interestsSentList">
+          <div class="alert alert-info"><i class="fas fa-info-circle"></i> Aapne abhi kisi ko interest nahi bheja. <a href="profiles.html">Profiles dekhein</a></div>
+        </div>
+      </div>
+
+      <!-- Interests Received -->
+      <div id="section-received" style="display:none">
+        <div class="dash-header"><h1>Interests Mile 📬</h1></div>
+        <div>
+          <div class="inbox-item unread">
+            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=100&fit=crop" class="inbox-avatar" alt="Priya" />
+            <div style="flex:1">
+              <div style="font-weight:700">Priya Sharma, 26</div>
+              <div style="font-size:0.85rem;color:var(--text-light)">Delhi • MBA Finance • Ne aapko interest bheja</div>
+            </div>
+            <div style="display:flex;gap:8px">
+              <button class="btn btn-primary" style="padding:8px 16px;font-size:0.85rem" onclick="showToast('Interest accept kar liya! ❤️')">Accept</button>
+              <button class="btn btn-outline" style="padding:8px 16px;font-size:0.85rem">Decline</button>
+            </div>
+          </div>
+          <div class="inbox-item unread">
+            <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&fit=crop" class="inbox-avatar" alt="Anjali" />
+            <div style="flex:1">
+              <div style="font-weight:700">Anjali Verma, 24</div>
+              <div style="font-size:0.85rem;color:var(--text-light)">Mumbai • Software Engineer • Ne aapko interest bheja</div>
+            </div>
+            <div style="display:flex;gap:8px">
+              <button class="btn btn-primary" style="padding:8px 16px;font-size:0.85rem" onclick="showToast('Interest accept kar liya! ❤️')">Accept</button>
+              <button class="btn btn-outline" style="padding:8px 16px;font-size:0.85rem">Decline</button>
+            </div>
+          </div>
+          <div class="inbox-item">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&fit=crop" class="inbox-avatar" alt="Nidhi" />
+            <div style="flex:1">
+              <div style="font-weight:700">Nidhi Agarwal, 25</div>
+              <div style="font-size:0.85rem;color:var(--text-light)">Jaipur • CA • Ne aapko interest bheja</div>
+            </div>
+            <div style="display:flex;gap:8px">
+              <button class="btn btn-primary" style="padding:8px 16px;font-size:0.85rem" onclick="showToast('Interest accept kar liya! ❤️')">Accept</button>
+              <button class="btn btn-outline" style="padding:8px 16px;font-size:0.85rem">Decline</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Messages -->
+      <div id="section-messages" style="display:none">
+        <div class="dash-header"><h1>Messages 💬</h1></div>
+        <div style="background:white;border-radius:16px;padding:40px;text-align:center;box-shadow:var(--shadow)">
+          <div style="font-size:4rem;margin-bottom:16px">💬</div>
+          <h3 style="margin-bottom:8px">Chat Feature</h3>
+          <p style="color:var(--text-light);margin-bottom:24px">Messages feature Premium members ke liye available hai</p>
+          <a href="index.html#membership" class="btn btn-primary btn-lg">Upgrade to Premium</a>
+        </div>
+      </div>
+
+      <!-- Saved Profiles -->
+      <div id="section-saved" style="display:none">
+        <div class="dash-header"><h1>Saved Profiles 🔖</h1></div>
+        <div class="profiles-grid" id="savedProfilesList"></div>
+      </div>
+
+      <!-- Edit Profile -->
+      <div id="section-profile" style="display:none">
+        <div class="dash-header"><h1>Edit Profile ✏️</h1></div>
+        <div style="background:white;border-radius:16px;padding:32px;box-shadow:var(--shadow)">
+          <div style="margin-bottom:32px;text-align:center">
+            <div style="width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;font-size:2.5rem;color:white;margin:0 auto 16px"></div>
+            <button class="btn btn-outline" onclick="showToast('Photo upload feature coming soon!')">
+              <i class="fas fa-camera"></i> Photo Upload Karein
+            </button>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Full Name</label><input type="text" id="editName" /></div>
+            <div class="form-group"><label>Age</label><input type="number" id="editAge" /></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>City</label><input type="text" id="editCity" /></div>
+            <div class="form-group"><label>Education</label><input type="text" id="editEdu" /></div>
+          </div>
+          <div class="form-group">
+            <label>About Me</label>
+            <textarea id="editAbout" rows="4" placeholder="Apne baare mein kuch likhein..."></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Profession</label><input type="text" id="editProf" /></div>
+            <div class="form-group"><label>Income</label><input type="text" id="editIncome" /></div>
+          </div>
+          <button class="btn btn-primary btn-lg" onclick="saveProfile()">
+            <i class="fas fa-save"></i> Save Changes
+          </button>
+        </div>
+      </div>
+
+      <!-- Settings -->
+      <div id="section-settings" style="display:none">
+        <div class="dash-header"><h1>Settings ⚙️</h1></div>
+        <div style="background:white;border-radius:16px;padding:32px;box-shadow:var(--shadow)">
+          <h3 style="margin-bottom:20px;color:var(--secondary)">Notification Settings</h3>
+          <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:32px">
+            <label class="checkbox-item"><input type="checkbox" checked /> New match notification</label>
+            <label class="checkbox-item"><input type="checkbox" checked /> Interest receive notification</label>
+            <label class="checkbox-item"><input type="checkbox" /> Message notification</label>
+            <label class="checkbox-item"><input type="checkbox" checked /> Profile view notification</label>
+          </div>
+          <h3 style="margin-bottom:20px;color:var(--secondary)">Privacy Settings</h3>
+          <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:32px">
+            <label class="checkbox-item"><input type="checkbox" checked /> Profile ko sab dekh sakte hain</label>
+            <label class="checkbox-item"><input type="checkbox" /> Contact number chhupayein</label>
+            <label class="checkbox-item"><input type="checkbox" /> Last seen chhupayein</label>
+          </div>
+          <h3 style="margin-bottom:20px;color:var(--secondary)">Account</h3>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <button class="btn btn-outline" onclick="showToast('Password change email bheja gaya!')">
+              <i class="fas fa-lock"></i> Change Password
+            </button>
+            <button class="btn" style="background:#fadbd8;color:#922b21" onclick="if(confirm('Account delete karna chahte hain?')){logout()}">
+              <i class="fas fa-trash"></i> Delete Account
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/profiles-data.js"></script>
+  <script>
+    // Auth check
+    document.addEventListener('DOMContentLoaded', () => {
+      const user = RishtaDB.getUser();
+      if (!user) { window.location.href = 'login.html'; return; }
+
+      // Set user info
+      document.getElementById('welcomeName').textContent = user.name?.split(' ')[0] || 'User';
+      document.getElementById('navUserName').textContent = user.name;
+      document.getElementById('sidebarName').textContent = user.name;
+      const mem = document.getElementById('sidebarMembership');
+      mem.textContent = (user.membership || 'basic').toUpperCase();
+      mem.style.background = user.membership === 'premium' ? 'var(--gold)' : 'rgba(255,255,255,0.2)';
+      mem.style.color = 'white';
+
+      // Stats
+      const interests = RishtaDB.get('interests') || [];
+      const saved = RishtaDB.get('saved_profiles') || [];
+      document.getElementById('statInterestsSent').textContent = interests.length;
+      document.getElementById('statSaved').textContent = saved.length;
+
+      // Today's matches
+      const todayM = document.getElementById('todayMatches');
+      const matchProfiles = PROFILES.slice(0, 3);
+      todayM.innerHTML = matchProfiles.map(p => `
+        <div class="match-card">
+          <img src="${p.photo}" alt="${p.name}" />
+          <div style="flex:1">
+            <div style="font-weight:700;color:var(--secondary)">${p.name}, ${p.age}</div>
+            <div style="font-size:0.82rem;color:var(--text-light)">${p.city} • ${p.profession}</div>
+          </div>
+          <div style="text-align:center">
+            <div class="match-pct">${Math.floor(Math.random()*20+75)}%</div>
+            <div style="font-size:0.72rem;color:var(--text-light)">Match</div>
+          </div>
+          <button class="btn btn-primary" style="padding:8px 14px;font-size:0.82rem"
+            onclick="window.location.href='profile-detail.html?id=${p.id}'">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>`).join('');
+
+      // Edit profile prefill
+      document.getElementById('editName').value = user.name || '';
+      document.getElementById('editAge').value = user.age || '';
+      document.getElementById('editCity').value = user.city || '';
+      document.getElementById('editEdu').value = user.education || '';
+      document.getElementById('editProf').value = user.profession || '';
+      document.getElementById('editIncome').value = user.income || '';
+
+      // Dash matches
+      document.getElementById('dashMatches').innerHTML = PROFILES.slice(0,4).map(p =>
+        `<div class="profile-card lift">
+          <div class="profile-card-img zoom-wrap"><img src="${p.photo}" alt="${p.name}" /></div>
+          <div class="profile-card-body">
+            <div class="profile-card-name">${p.name}</div>
+            <div class="profile-card-age">${p.age} yrs • ${p.city}</div>
+            <div class="profile-card-actions">
+              <button class="btn btn-primary" onclick="window.location.href='profile-detail.html?id=${p.id}'"><i class="fas fa-eye"></i> View</button>
+              <button class="btn btn-outline" onclick="sendInterest('${p.id}','${p.name}')"><i class="fas fa-heart"></i></button>
+            </div>
+          </div>
+        </div>`).join('');
+
+      // Saved profiles
+      const savedIds = RishtaDB.get('saved_profiles') || [];
+      const savedProfiles = PROFILES.filter(p => savedIds.includes(p.id));
+      const savedList = document.getElementById('savedProfilesList');
+      if (savedProfiles.length === 0) {
+        savedList.innerHTML = '<div class="alert alert-info" style="grid-column:1/-1"><i class="fas fa-info-circle"></i> Koi saved profile nahi. <a href="profiles.html">Profiles dekhein</a></div>';
+      } else {
+        savedList.innerHTML = savedProfiles.map(p =>
+          `<div class="profile-card lift">
+            <div class="profile-card-img zoom-wrap"><img src="${p.photo}" alt="${p.name}" /></div>
+            <div class="profile-card-body">
+              <div class="profile-card-name">${p.name}</div>
+              <div class="profile-card-age">${p.age} yrs • ${p.city}</div>
+              <div class="profile-card-actions">
+                <button class="btn btn-primary" onclick="window.location.href='profile-detail.html?id=${p.id}'"><i class="fas fa-eye"></i> View</button>
+              </div>
+            </div>
+          </div>`).join('');
+      }
+    });
+
+    function showSection(name) {
+      document.querySelectorAll('[id^="section-"]').forEach(el => el.style.display = 'none');
+      document.getElementById('section-' + name).style.display = 'block';
+      document.querySelectorAll('.dash-menu a').forEach(a => a.classList.remove('active'));
+    }
+
+    function saveProfile() {
+      const user = RishtaDB.getUser();
+      if (!user) return;
+      user.name = document.getElementById('editName').value;
+      user.age = document.getElementById('editAge').value;
+      user.city = document.getElementById('editCity').value;
+      user.education = document.getElementById('editEdu').value;
+      user.profession = document.getElementById('editProf').value;
+      user.income = document.getElementById('editIncome').value;
+      RishtaDB.set('rishta_user', user);
+      showToast('Profile save ho gayi! ✅');
+    }
+  </script>
+</body>
+</html>

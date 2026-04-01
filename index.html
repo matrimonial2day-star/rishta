@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RishtaBandhan - Premium Matrimonial</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <span class="logo-icon">❤</span>
+        <span class="logo-text">RishtaBandhan</span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="profiles.html">Profiles</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="success-stories.html">Success Stories</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline">Login</a>
+        <a href="register.html" class="btn btn-primary">Register Free</a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-badge">✨ India's Most Trusted Matrimonial Platform</div>
+      <h1 class="hero-title">
+        Apna <em>Soulmate</em> Dhundein<br/>
+        <span>Lakhon Verified Profiles Mein</span>
+      </h1>
+      <p class="hero-subtitle">Shadi ke liye sabse bharosemand platform — jahan dil milte hain, rishte bante hain.</p>
+
+      <!-- Quick Search -->
+      <div class="hero-search">
+        <div class="search-row">
+          <div class="search-field">
+            <label>Main Hoon</label>
+            <select id="gender">
+              <option>Dulha (Groom)</option>
+              <option>Dulhan (Bride)</option>
+            </select>
+          </div>
+          <div class="search-field">
+            <label>Dhundh Raha/Rahi Hoon</label>
+            <select id="lookingFor">
+              <option>Dulhan (Bride)</option>
+              <option>Dulha (Groom)</option>
+            </select>
+          </div>
+          <div class="search-field">
+            <label>Religion</label>
+            <select id="religion">
+              <option>Hindu</option>
+              <option>Muslim</option>
+              <option>Sikh</option>
+              <option>Christian</option>
+              <option>Jain</option>
+              <option>Buddhist</option>
+            </select>
+          </div>
+          <div class="search-field">
+            <label>Age Range</label>
+            <select id="ageRange">
+              <option>21 - 25</option>
+              <option>26 - 30</option>
+              <option>31 - 35</option>
+              <option>36 - 40</option>
+              <option>41+</option>
+            </select>
+          </div>
+          <button class="btn btn-primary search-btn" onclick="window.location.href='search.html'">
+            <i class="fas fa-search"></i> Search
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" data-target="50">0</span><span>Lakh+</span><small>Registered Members</small></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num" data-target="10">0</span><span>Lakh+</span><small>Success Stories</small></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num" data-target="25">0</span><span>Saal</span><small>Ka Bharosa</small></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num" data-target="98">0</span><span>%</span><small>Verified Profiles</small></div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="couple-card">
+        <div class="couple-img">
+          <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=400&h=500&fit=crop" alt="Happy Couple" />
+        </div>
+        <div class="couple-badge"><i class="fas fa-heart"></i> Perfect Match Found!</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Why Choose Us</span>
+        <h2>Kyun Hai RishtaBandhan Sabse Khaas?</h2>
+        <p>Hum sirf profiles nahi, zindagi bhar ke saathi dhundhne mein madad karte hain</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #ff6b6b, #ee5a24)">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>100% Verified Profiles</h3>
+          <p>Har profile ID proof, photos, aur details se verify ki jaati hai taaki aap safe rahein.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #a29bfe, #6c5ce7)">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h3>AI-Powered Matching</h3>
+          <p>Hamaari smart AI technology aapki preferences, values aur goals ke hisaab se perfect match dhundhti hai.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #55efc4, #00b894)">
+            <i class="fas fa-lock"></i>
+          </div>
+          <h3>Privacy Protection</h3>
+          <p>Aapki contact details aur photos sirf aapki permission se hi share hoti hain.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #fdcb6e, #e17055)">
+            <i class="fas fa-comments"></i>
+          </div>
+          <h3>Secure Chat & Call</h3>
+          <p>Encrypted messaging aur video call feature se safely baat karein apne potential partner se.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #74b9ff, #0984e3)">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Family Involvement</h3>
+          <p>Family account feature se aap apne parents ko bhi involve kar sakte hain rishta dhundhne mein.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #fd79a8, #e84393)">
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>Horoscope Matching</h3>
+          <p>Kundali Milan aur janam patri matching ki facility bhi available hai hamari platform par.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROFILES -->
+  <section class="featured-profiles">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Today's Matches</span>
+        <h2>Aaj Ke Featured Profiles</h2>
+        <p>Ye profiles specially aapke liye selected hain</p>
+      </div>
+      <div class="profiles-grid" id="featuredProfiles">
+        <!-- Generated by JS -->
+      </div>
+      <div class="text-center mt-40">
+        <a href="profiles.html" class="btn btn-primary btn-lg">Sab Profiles Dekhein <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Simple Process</span>
+        <h2>Kaise Kaam Karta Hai?</h2>
+        <p>Sirf 4 aasaan steps mein apna perfect life partner dhundein</p>
+      </div>
+      <div class="steps-container">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-icon"><i class="fas fa-user-plus"></i></div>
+          <h3>Register Karein</h3>
+          <p>Free mein apna account banayein aur basic information fill karein</p>
+        </div>
+        <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-icon"><i class="fas fa-id-card"></i></div>
+          <h3>Profile Banayein</h3>
+          <p>Apni complete profile banayein aur photos upload karein</p>
+        </div>
+        <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-icon"><i class="fas fa-search-heart"></i></div>
+          <h3>Match Dhundein</h3>
+          <p>Advanced filters se apni pasand ka partner dhundein</p>
+        </div>
+        <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-icon"><i class="fas fa-heart"></i></div>
+          <h3>Connect Karein</h3>
+          <p>Interest bhejein, baat karein aur apna rishta pakka karein</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUCCESS STORIES -->
+  <section class="success-stories">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Love Stories</span>
+        <h2>Hamare Happy Couples</h2>
+        <p>Unki zubani sunein jo is platform par apna saathi dhoondh chuke hain</p>
+      </div>
+      <div class="stories-grid">
+        <div class="story-card">
+          <div class="story-img">
+            <img src="https://images.unsplash.com/photo-1529634597503-139d3726fed5?w=300&h=200&fit=crop" alt="Couple 1" />
+          </div>
+          <div class="story-content">
+            <div class="story-names">Rahul & Priya</div>
+            <div class="story-location"><i class="fas fa-map-marker-alt"></i> Delhi • Married 2023</div>
+            <p>"RishtaBandhan par humari pehli mulaqat hui thi. 6 mahine baad humne shadi kar li. Ye platform truly amazing hai!"</p>
+            <div class="story-rating">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-img">
+            <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=300&h=200&fit=crop" alt="Couple 2" />
+          </div>
+          <div class="story-content">
+            <div class="story-names">Arjun & Sneha</div>
+            <div class="story-location"><i class="fas fa-map-marker-alt"></i> Mumbai • Married 2022</div>
+            <p>"Maine kabhi nahi socha tha ki online matrimonial site se itna acha rishta milega. Dil se shukriya!"</p>
+            <div class="story-rating">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-img">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=300&h=200&fit=crop" alt="Couple 3" />
+          </div>
+          <div class="story-content">
+            <div class="story-names">Vikram & Ananya</div>
+            <div class="story-location"><i class="fas fa-map-marker-alt"></i> Bangalore • Married 2024</div>
+            <p>"AI matching ne hamein perfect match karaya. Hamari values, interests sab match karte hain!"</p>
+            <div class="story-rating">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-40">
+        <a href="success-stories.html" class="btn btn-outline btn-lg">Aur Stories Dekhein</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMBERSHIP PLANS -->
+  <section class="membership" id="membership">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Premium Plans</span>
+        <h2>Membership Plans</h2>
+        <p>Apni needs ke hisaab se plan chunein aur apni search ko fast track karein</p>
+      </div>
+      <div class="plans-grid">
+        <div class="plan-card">
+          <div class="plan-badge">Free</div>
+          <div class="plan-price">₹0<span>/month</span></div>
+          <h3>Basic</h3>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i> Profile Create</li>
+            <li><i class="fas fa-check"></i> 10 Profiles View Daily</li>
+            <li><i class="fas fa-check"></i> 5 Interests Send</li>
+            <li><i class="fas fa-times text-muted"></i> Contact Details</li>
+            <li><i class="fas fa-times text-muted"></i> Chat Feature</li>
+            <li><i class="fas fa-times text-muted"></i> Video Call</li>
+          </ul>
+          <a href="register.html" class="btn btn-outline btn-full">Get Started</a>
+        </div>
+        <div class="plan-card popular">
+          <div class="plan-badge">Most Popular</div>
+          <div class="plan-price">₹999<span>/month</span></div>
+          <h3>Premium</h3>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i> Unlimited Profile Views</li>
+            <li><i class="fas fa-check"></i> Unlimited Interests</li>
+            <li><i class="fas fa-check"></i> Contact Details Access</li>
+            <li><i class="fas fa-check"></i> Chat Feature</li>
+            <li><i class="fas fa-check"></i> AI Matching</li>
+            <li><i class="fas fa-times text-muted"></i> Video Call</li>
+          </ul>
+          <a href="register.html" class="btn btn-primary btn-full">Upgrade Now</a>
+        </div>
+        <div class="plan-card">
+          <div class="plan-badge">Best Value</div>
+          <div class="plan-price">₹1999<span>/month</span></div>
+          <h3>Elite</h3>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i> All Premium Features</li>
+            <li><i class="fas fa-check"></i> Video Call Feature</li>
+            <li><i class="fas fa-check"></i> Dedicated Matchmaker</li>
+            <li><i class="fas fa-check"></i> Profile Highlight</li>
+            <li><i class="fas fa-check"></i> Priority Support</li>
+            <li><i class="fas fa-check"></i> Kundali Matching</li>
+          </ul>
+          <a href="register.html" class="btn btn-gold btn-full">Go Elite</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="newsletter-text">
+          <h2>Naye Matches Ki Notification Paayein</h2>
+          <p>Apna email subscribe karein aur daily apne liye best matches paayein</p>
+        </div>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Apna email enter karein..." />
+          <button class="btn btn-primary">Subscribe</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <span class="logo-icon">❤</span>
+            <span class="logo-text">RishtaBandhan</span>
+          </div>
+          <p>India ka sabse trusted matrimonial platform. Lakhon log apna perfect life partner yahan dhundh chuke hain.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profiles.html">Browse Profiles</a></li>
+            <li><a href="search.html">Advanced Search</a></li>
+            <li><a href="success-stories.html">Success Stories</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#">Kundali Matching</a></li>
+            <li><a href="#">Premium Membership</a></li>
+            <li><a href="#">Matchmaking Service</a></li>
+            <li><a href="#">Verified Profiles</a></li>
+            <li><a href="#">Mobile App</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Help Center</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 RishtaBandhan. All Rights Reserved. Made with ❤ in India</p>
+        <p>Contact: info@rishtabandhan.com | +91 98765 43210</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/profiles-data.js"></script>
+</body>
+</html>

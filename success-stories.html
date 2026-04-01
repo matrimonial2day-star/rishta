@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Success Stories - RishtaBandhan</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .story-full-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      transition: transform 0.3s;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+    }
+    @media(max-width:640px) { .story-full-card { grid-template-columns: 1fr; } }
+    .story-full-card:hover { transform: translateY(-4px); }
+    .story-full-img img { width: 100%; height: 100%; min-height: 240px; object-fit: cover; border-radius: 0; }
+    .story-full-body { padding: 32px; }
+    .story-hearts { color: var(--primary); font-size: 1.5rem; margin-bottom: 12px; }
+    .story-quote { font-style: italic; color: var(--text-light); font-size: 0.95rem; line-height: 1.8; margin: 16px 0; border-left: 3px solid var(--primary); padding-left: 16px; }
+    .submit-story { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; padding: 64px 0; text-align: center; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo"><span class="logo-icon">❤</span><span class="logo-text">RishtaBandhan</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profiles.html">Profiles</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="success-stories.html" class="active">Success Stories</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline">Login</a>
+        <a href="register.html" class="btn btn-primary">Register</a>
+      </div>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Success Stories 💕</h1>
+      <p>Unki khushi dekh ke dil bhar aata hai — ye log apna saathi yahan dhoondh chuke hain</p>
+    </div>
+  </div>
+
+  <section style="padding:80px 0;background:var(--bg-light)">
+    <div class="container">
+      <div style="display:flex;flex-direction:column;gap:32px">
+        
+        <div class="story-full-card reveal">
+          <div class="story-full-img"><img src="https://images.unsplash.com/photo-1529634597503-139d3726fed5?w=400&h=400&fit=crop" alt="Couple" /></div>
+          <div class="story-full-body">
+            <div class="story-hearts">❤️❤️❤️</div>
+            <h2 style="color:var(--secondary);margin-bottom:6px">Rahul & Priya</h2>
+            <p style="color:var(--text-light);font-size:0.85rem;margin-bottom:12px"><i class="fas fa-map-marker-alt" style="color:var(--primary)"></i> Delhi • <i class="fas fa-calendar" style="color:var(--primary)"></i> Shadi: March 2023</p>
+            <div class="story-quote">
+              "Humne kabhi nahi socha tha ki online platform par itna acha rishta milega. RishtaBandhan ne humari life badal di. Pehle chat ki, fir family ko milaye, aur 6 mahine baad hum ek ho gaye!"
+            </div>
+            <p style="font-size:0.9rem;color:var(--text)">Rahul ek IT professional hai aur Priya ek teacher. Dono Delhi mein hi rehte the lekin kabhi mile nahi the. RishtaBandhan ki AI matching ne inhe ek saath laaya.</p>
+            <div style="margin-top:16px">⭐⭐⭐⭐⭐ <span style="color:var(--text-light);font-size:0.85rem">5/5 stars</span></div>
+          </div>
+        </div>
+
+        <div class="story-full-card reveal">
+          <div class="story-full-img"><img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=400&h=400&fit=crop" alt="Couple" /></div>
+          <div class="story-full-body">
+            <div class="story-hearts">❤️❤️❤️</div>
+            <h2 style="color:var(--secondary);margin-bottom:6px">Arjun & Sneha</h2>
+            <p style="color:var(--text-light);font-size:0.85rem;margin-bottom:12px"><i class="fas fa-map-marker-alt" style="color:var(--primary)"></i> Mumbai • <i class="fas fa-calendar" style="color:var(--primary)"></i> Shadi: November 2022</p>
+            <div class="story-quote">
+              "Main pehle bahut hesitant tha online matrimonial site use karne ke liye. Lekin jab maine Sneha ka profile dekha, toh laga jaise kisi ne meri wish suni ho. Aaj hum 2 saal se khushi se saath hain!"
+            </div>
+            <p style="font-size:0.9rem;color:var(--text)">Arjun ek Marketing Manager hai aur Sneha ek Doctor. Different professions, alag cities — lekin values aur dreams same the. Is connection ko possible banaya RishtaBandhan ne.</p>
+            <div style="margin-top:16px">⭐⭐⭐⭐⭐ <span style="color:var(--text-light);font-size:0.85rem">5/5 stars</span></div>
+          </div>
+        </div>
+
+        <div class="story-full-card reveal">
+          <div class="story-full-img"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=400&h=400&fit=crop" alt="Couple" /></div>
+          <div class="story-full-body">
+            <div class="story-hearts">❤️❤️❤️</div>
+            <h2 style="color:var(--secondary);margin-bottom:6px">Vikram & Ananya</h2>
+            <p style="color:var(--text-light);font-size:0.85rem;margin-bottom:12px"><i class="fas fa-map-marker-alt" style="color:var(--primary)"></i> Bangalore • <i class="fas fa-calendar" style="color:var(--primary)"></i> Shadi: January 2024</p>
+            <div class="story-quote">
+              "Hamari family ne is platform par trust kiya aur hum ek perfect match dhoondh sake. Dono families bhi bahut khush hain. RishtaBandhan sirf ek website nahi, ek zindagi badalne wala platform hai!"
+            </div>
+            <p style="font-size:0.9rem;color:var(--text)">Vikram ek Software Engineer aur Ananya ek CA hain. Dono Bangalore mein settle the aur unka life vision ek jaisa tha. Kundali bhi match ki aur family ne bhi haan bol di!</p>
+            <div style="margin-top:16px">⭐⭐⭐⭐⭐ <span style="color:var(--text-light);font-size:0.85rem">5/5 stars</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="submit-story">
+    <div class="container">
+      <h2 style="color:white;margin-bottom:16px">Aapki Bhi Success Story Hai?</h2>
+      <p style="color:rgba(255,255,255,0.85);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">
+        Agar aapne bhi RishtaBandhan par apna saathi dhoondha hai, toh apni story hum se share karein!
+      </p>
+      <a href="contact.html" class="btn btn-full btn-lg" style="background:white;color:var(--primary);display:inline-flex;max-width:300px">
+        <i class="fas fa-heart"></i> Apni Story Share Karein
+      </a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top:none;padding:24px 0">
+        <p>© 2024 RishtaBandhan. All Rights Reserved.</p>
+        <p><a href="index.html" style="color:rgba(255,255,255,0.6)">Home</a> | <a href="contact.html" style="color:rgba(255,255,255,0.6)">Contact</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

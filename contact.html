@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - RishtaBandhan</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo"><span class="logo-icon">❤</span><span class="logo-text">RishtaBandhan</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profiles.html">Profiles</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="success-stories.html">Success Stories</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline">Login</a>
+        <a href="register.html" class="btn btn-primary">Register</a>
+      </div>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Hamse Sampark Karein</h1>
+      <p>Hum aapki madad karne ke liye hamesha taiyaar hain</p>
+    </div>
+  </div>
+
+  <section style="padding:80px 0;background:var(--bg-light)">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start">
+
+        <div>
+          <h2 style="margin-bottom:24px;color:var(--secondary)">Contact Information</h2>
+          <div style="display:flex;flex-direction:column;gap:24px">
+            <div style="display:flex;gap:16px;align-items:flex-start">
+              <div style="width:48px;height:48px;background:linear-gradient(135deg,var(--primary),var(--primary-light));border-radius:12px;display:flex;align-items:center;justify-content:center;color:white;flex-shrink:0">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <div style="font-weight:700;margin-bottom:4px">Phone</div>
+                <a href="tel:+919876543210" style="color:var(--text-light)">+91 98765 43210</a><br/>
+                <a href="tel:+911800001234" style="color:var(--text-light)">1800-001-234 (Toll Free)</a>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start">
+              <div style="width:48px;height:48px;background:linear-gradient(135deg,#a29bfe,#6c5ce7);border-radius:12px;display:flex;align-items:center;justify-content:center;color:white;flex-shrink:0">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <div style="font-weight:700;margin-bottom:4px">Email</div>
+                <a href="mailto:info@rishtabandhan.com" style="color:var(--text-light)">info@rishtabandhan.com</a><br/>
+                <a href="mailto:support@rishtabandhan.com" style="color:var(--text-light)">support@rishtabandhan.com</a>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start">
+              <div style="width:48px;height:48px;background:linear-gradient(135deg,#55efc4,#00b894);border-radius:12px;display:flex;align-items:center;justify-content:center;color:white;flex-shrink:0">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <div style="font-weight:700;margin-bottom:4px">Office</div>
+                <span style="color:var(--text-light)">Plot 45, Sector 18<br/>Noida, Uttar Pradesh - 201301<br/>India</span>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start">
+              <div style="width:48px;height:48px;background:linear-gradient(135deg,#fdcb6e,#e17055);border-radius:12px;display:flex;align-items:center;justify-content:center;color:white;flex-shrink:0">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div>
+                <div style="font-weight:700;margin-bottom:4px">Working Hours</div>
+                <span style="color:var(--text-light)">Monday - Saturday<br/>9:00 AM - 7:00 PM IST</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:32px">
+            <h4 style="margin-bottom:16px">Social Media</h4>
+            <div class="social-links" style="margin-top:0">
+              <a href="#" style="background:var(--secondary)"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" style="background:var(--secondary)"><i class="fab fa-instagram"></i></a>
+              <a href="#" style="background:var(--secondary)"><i class="fab fa-twitter"></i></a>
+              <a href="#" style="background:var(--secondary)"><i class="fab fa-youtube"></i></a>
+              <a href="#" style="background:#25d366"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div style="background:white;border-radius:var(--radius);padding:40px;box-shadow:var(--shadow)">
+          <h2 style="margin-bottom:8px;color:var(--secondary)">Message Bhejein</h2>
+          <p style="color:var(--text-light);margin-bottom:32px">Hum 24 ghante ke andar jawab denge</p>
+
+          <div id="contactAlert"></div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Aapka Naam</label>
+              <input type="text" id="contactName" placeholder="Pura naam darj karein" />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" id="contactEmail" placeholder="Email address" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Phone (Optional)</label>
+            <input type="tel" id="contactPhone" placeholder="+91 98765 43210" />
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <select id="contactSubject">
+              <option>Profile Related</option>
+              <option>Payment / Membership</option>
+              <option>Technical Issue</option>
+              <option>Report a Profile</option>
+              <option>Partnership</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea id="contactMessage" rows="5" placeholder="Apna message yahan likhein..."></textarea>
+          </div>
+          <button class="btn btn-primary btn-lg btn-full" onclick="sendContact()">
+            <i class="fas fa-paper-plane"></i> Message Bhejein
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section style="padding:80px 0;background:white">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">FAQs</span>
+        <h2>Aksar Puche Jane Wale Sawal</h2>
+      </div>
+      <div style="max-width:700px;margin:0 auto">
+        <div id="faqList"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top:none;padding:24px 0">
+        <p>© 2024 RishtaBandhan. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    const faqs = [
+      { q: 'Kya RishtaBandhan par registration free hai?', a: 'Haan, basic registration bilkul free hai. Aap free account se profiles dekh sakte hain aur limited features use kar sakte hain.' },
+      { q: 'Profile verify kaise hoti hai?', a: 'Hum Aadhaar card, PAN card, ya kisi government ID se profile verify karte hain. Verified badge milne ke liye documents submit karein.' },
+      { q: 'Premium membership ke kya fayde hain?', a: 'Premium membership se aap unlimited profiles dekh sakte hain, contact details access kar sakte hain, chat kar sakte hain, aur AI matching ka faida utha sakte hain.' },
+      { q: 'Kya meri personal information safe hai?', a: 'Bilkul. Hum SSL encryption use karte hain aur aapka data kisi third party se share nahi karte. Aapki privacy hamari priority hai.' },
+      { q: 'Subscription cancel kaise karein?', a: 'Aap apne dashboard ke Settings section se kabhi bhi subscription cancel kar sakte hain. Cancel karne ke baad remaining days ka access rahega.' },
+    ];
+
+    document.getElementById('faqList').innerHTML = faqs.map((f, i) => `
+      <div style="border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden">
+        <button onclick="toggleFaq(${i})" style="width:100%;text-align:left;padding:20px;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:Nunito,sans-serif;font-weight:700;font-size:0.95rem;color:var(--secondary)">
+          ${f.q}
+          <i class="fas fa-chevron-down" id="faqIcon${i}" style="transition:0.3s;flex-shrink:0;margin-left:12px;color:var(--primary)"></i>
+        </button>
+        <div id="faqAns${i}" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease">
+          <div style="padding:0 20px 20px;color:var(--text-light);font-size:0.93rem">${f.a}</div>
+        </div>
+      </div>`).join('');
+
+    function toggleFaq(i) {
+      const ans = document.getElementById('faqAns' + i);
+      const icon = document.getElementById('faqIcon' + i);
+      if (ans.style.maxHeight === '0px' || !ans.style.maxHeight) {
+        ans.style.maxHeight = '200px';
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        ans.style.maxHeight = '0px';
+        icon.style.transform = 'rotate(0deg)';
+      }
+    }
+
+    function sendContact() {
+      const name = document.getElementById('contactName').value.trim();
+      const email = document.getElementById('contactEmail').value.trim();
+      const msg = document.getElementById('contactMessage').value.trim();
+
+      if (!name || !email || !msg) {
+        document.getElementById('contactAlert').innerHTML = '<div class="alert alert-error"><i class="fas fa-exclamation-circle"></i> Sab zaroori fields fill karein!</div>';
+        return;
+      }
+      document.getElementById('contactAlert').innerHTML = '<div class="alert alert-success"><i class="fas fa-check-circle"></i> Aapka message bhej diya gaya! Hum jald hi sampark karenge.</div>';
+      document.getElementById('contactName').value = '';
+      document.getElementById('contactEmail').value = '';
+      document.getElementById('contactPhone').value = '';
+      document.getElementById('contactMessage').value = '';
+    }
+  </script>
+</body>
+</html>

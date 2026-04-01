@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browse Profiles - RishtaBandhan</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo"><span class="logo-icon">❤</span><span class="logo-text">RishtaBandhan</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profiles.html" class="active">Profiles</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="success-stories.html">Success Stories</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline">Login</a>
+        <a href="register.html" class="btn btn-primary">Register</a>
+      </div>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Browse Profiles</h1>
+      <p>Hazaron verified profiles mein se apna perfect match dhundein</p>
+    </div>
+  </div>
+
+  <div style="max-width:1200px;margin:0 auto;padding:40px 24px">
+
+    <!-- Filter Bar -->
+    <div style="background:white;border-radius:16px;padding:24px;box-shadow:var(--shadow);margin-bottom:32px;border:1px solid var(--border)">
+      <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end">
+        <div class="search-field" style="flex:1;min-width:130px">
+          <label>Gender</label>
+          <select id="filterGender">
+            <option value="all">Sab</option>
+            <option value="female">Dulhan (Female)</option>
+            <option value="male">Dulha (Male)</option>
+          </select>
+        </div>
+        <div class="search-field" style="flex:1;min-width:130px">
+          <label>Religion</label>
+          <select id="filterReligion">
+            <option value="all">Sab</option>
+            <option value="Hindu">Hindu</option>
+            <option value="Muslim">Muslim</option>
+            <option value="Sikh">Sikh</option>
+            <option value="Christian">Christian</option>
+            <option value="Jain">Jain</option>
+          </select>
+        </div>
+        <div class="search-field" style="flex:1;min-width:100px">
+          <label>Min Age</label>
+          <input type="number" id="filterAgeMin" value="18" min="18" max="60" />
+        </div>
+        <div class="search-field" style="flex:1;min-width:100px">
+          <label>Max Age</label>
+          <input type="number" id="filterAgeMax" value="50" min="18" max="70" />
+        </div>
+        <div class="search-field" style="flex:1;min-width:130px">
+          <label>City</label>
+          <input type="text" id="filterCity" placeholder="Shehar ka naam..." />
+        </div>
+        <div style="display:flex;gap:10px">
+          <button class="btn btn-primary" onclick="applyFilters()">
+            <i class="fas fa-filter"></i> Filter
+          </button>
+          <button class="btn btn-outline" onclick="resetFilters()">
+            <i class="fas fa-times"></i> Reset
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Count -->
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px">
+      <p id="resultsCount" style="color:var(--text-light);font-weight:600">8 profiles</p>
+      <select id="sortBy" onchange="sortProfiles()" style="padding:8px 16px;border:1.5px solid var(--border);border-radius:8px;font-family:Nunito,sans-serif">
+        <option value="default">Sort By: Default</option>
+        <option value="age_asc">Age: Kam se Zyada</option>
+        <option value="age_desc">Age: Zyada se Kam</option>
+        <option value="name">Name: A-Z</option>
+      </select>
+    </div>
+
+    <!-- Profiles Grid -->
+    <div class="profiles-grid" id="allProfiles"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top:none;padding:24px 0">
+        <p>© 2024 RishtaBandhan. All Rights Reserved.</p>
+        <p><a href="index.html" style="color:rgba(255,255,255,0.6)">Home</a> | <a href="contact.html" style="color:rgba(255,255,255,0.6)">Contact</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/profiles-data.js"></script>
+  <script>
+    function sortProfiles() {
+      const sort = document.getElementById('sortBy').value;
+      let list = [...PROFILES];
+      if (sort === 'age_asc') list.sort((a,b) => a.age - b.age);
+      else if (sort === 'age_desc') list.sort((a,b) => b.age - a.age);
+      else if (sort === 'name') list.sort((a,b) => a.name.localeCompare(b.name));
+      renderAllProfiles(list);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - RishtaBandhan</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .step-indicator {
+      display: flex; align-items: center; justify-content: center;
+      gap: 8px; margin-bottom: 36px;
+    }
+    .step-dot {
+      width: 36px; height: 36px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.85rem;
+      background: var(--border); color: var(--text-light);
+      transition: all 0.3s;
+    }
+    .step-dot.active { background: var(--primary); color: white; box-shadow: 0 0 0 4px rgba(192,57,43,0.2); }
+    .step-dot.done { background: #00b894; color: white; }
+    .step-line { flex: 1; height: 2px; background: var(--border); max-width: 60px; }
+    .step-line.done { background: #00b894; }
+    .form-step { display: none; animation: fadeInUp 0.4s ease; }
+    .form-step.active { display: block; }
+    .auth-card { max-width: 580px; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">❤</span>
+        <span class="logo-text">RishtaBandhan</span>
+      </a>
+    </div>
+  </nav>
+
+  <div class="auth-page">
+    <div class="auth-card">
+      <div style="text-align:center;margin-bottom:24px">
+        <div style="font-size:2.5rem;margin-bottom:8px">💍</div>
+        <h2>Free Register Karein</h2>
+        <p class="subtitle">3 aasaan steps mein apna account banayein</p>
+      </div>
+
+      <!-- Step Indicator -->
+      <div class="step-indicator">
+        <div class="step-dot active" id="dot1">1</div>
+        <div class="step-line" id="line1"></div>
+        <div class="step-dot" id="dot2">2</div>
+        <div class="step-line" id="line2"></div>
+        <div class="step-dot" id="dot3">3</div>
+      </div>
+
+      <div id="registerAlert"></div>
+
+      <!-- Step 1: Basic Info -->
+      <div class="form-step active" id="step1">
+        <h3 style="margin-bottom:20px;color:var(--secondary)">Basic Information</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Aap Ke Liye Profile Hai</label>
+            <select id="profileFor">
+              <option value="">Select</option>
+              <option value="self">Khud Ke Liye</option>
+              <option value="son">Bete Ke Liye</option>
+              <option value="daughter">Beti Ke Liye</option>
+              <option value="brother">Bhai Ke Liye</option>
+              <option value="sister">Behen Ke Liye</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Gender</label>
+            <select id="regGender">
+              <option value="">Select</option>
+              <option value="male">Dulha (Male)</option>
+              <option value="female">Dulhan (Female)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="regName" placeholder="Pura naam darj karein" />
+          </div>
+          <div class="form-group">
+            <label>Date of Birth</label>
+            <input type="date" id="regDob" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Religion</label>
+            <select id="regReligion">
+              <option value="">Select</option>
+              <option>Hindu</option><option>Muslim</option><option>Sikh</option>
+              <option>Christian</option><option>Jain</option><option>Buddhist</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Caste (Optional)</label>
+            <input type="text" id="regCaste" placeholder="Apni caste darj karein" />
+          </div>
+        </div>
+        <button class="btn btn-primary btn-full" onclick="nextStep(1)">
+          Aage Barhen <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+
+      <!-- Step 2: Education & Profession -->
+      <div class="form-step" id="step2">
+        <h3 style="margin-bottom:20px;color:var(--secondary)">Education & Profession</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Highest Education</label>
+            <select id="regEdu">
+              <option value="">Select</option>
+              <option>10th Pass</option><option>12th Pass</option>
+              <option>Graduate (BA/BSc/BCom)</option><option>Engineering (BTech)</option>
+              <option>MBA</option><option>MBBS / Doctor</option>
+              <option>LLB / Lawyer</option><option>CA / CS</option>
+              <option>Masters (MA/MSc/MCom)</option><option>PhD</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Profession</label>
+            <select id="regProf">
+              <option value="">Select</option>
+              <option>Software Engineer</option><option>Government Employee</option>
+              <option>Business / Self Employed</option><option>Doctor</option>
+              <option>Teacher</option><option>Lawyer</option><option>Engineer</option>
+              <option>CA / Finance</option><option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Annual Income</label>
+            <select id="regIncome">
+              <option value="">Select</option>
+              <option>3 Lakh se Kam</option><option>3 - 6 Lakh</option>
+              <option>6 - 10 Lakh</option><option>10 - 20 Lakh</option>
+              <option>20 Lakh se Zyada</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Height</label>
+            <select id="regHeight">
+              <option value="">Select</option>
+              <option>4'9"</option><option>5'0"</option><option>5'2"</option>
+              <option>5'4"</option><option>5'6"</option><option>5'8"</option>
+              <option>5'10"</option><option>6'0"</option><option>6'2"+</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>City</label>
+            <input type="text" id="regCity" placeholder="Apna shehar darj karein" />
+          </div>
+          <div class="form-group">
+            <label>State</label>
+            <select id="regState">
+              <option value="">Select</option>
+              <option>Delhi</option><option>Maharashtra</option><option>Gujarat</option>
+              <option>Rajasthan</option><option>Punjab</option><option>Uttar Pradesh</option>
+              <option>Karnataka</option><option>Tamil Nadu</option><option>West Bengal</option>
+              <option>Madhya Pradesh</option><option>Bihar</option><option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px">
+          <button class="btn btn-outline" onclick="prevStep(2)" style="flex:1">
+            <i class="fas fa-arrow-left"></i> Wapas
+          </button>
+          <button class="btn btn-primary" onclick="nextStep(2)" style="flex:2">
+            Aage Barhen <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3: Account Details -->
+      <div class="form-step" id="step3">
+        <h3 style="margin-bottom:20px;color:var(--secondary)">Account Details</h3>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="regEmail" placeholder="Apna email darj karein" />
+        </div>
+        <div class="form-group">
+          <label>Mobile Number</label>
+          <input type="tel" id="regPhone" placeholder="+91 98765 43210" maxlength="10" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="regPwd" placeholder="Password banayein" />
+          </div>
+          <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="password" id="regPwd2" placeholder="Password dobara darj karein" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="checkbox-item" style="font-size:0.88rem;cursor:pointer">
+            <input type="checkbox" id="regTerms" />
+            Main RishtaBandhan ki <a href="#" style="color:var(--primary)">Terms & Conditions</a> se sahmat hoon
+          </label>
+        </div>
+        <div style="display:flex;gap:12px">
+          <button class="btn btn-outline" onclick="prevStep(3)" style="flex:1">
+            <i class="fas fa-arrow-left"></i> Wapas
+          </button>
+          <button class="btn btn-primary" onclick="doRegister()" style="flex:2">
+            <i class="fas fa-user-plus"></i> Register Karein
+          </button>
+        </div>
+      </div>
+
+      <p style="text-align:center;margin-top:24px;font-size:0.9rem;color:var(--text-light)">
+        Pehle se account hai? 
+        <a href="login.html" style="color:var(--primary);font-weight:700">Login Karein</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    let currentStep = 1;
+
+    function showAlert(msg, type = 'error') {
+      document.getElementById('registerAlert').innerHTML = 
+        `<div class="alert alert-${type}"><i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i> ${msg}</div>`;
+    }
+    function clearAlert() {
+      document.getElementById('registerAlert').innerHTML = '';
+    }
+
+    function nextStep(from) {
+      clearAlert();
+      if (from === 1) {
+        if (!document.getElementById('profileFor').value ||
+            !document.getElementById('regGender').value ||
+            !document.getElementById('regName').value ||
+            !document.getElementById('regDob').value ||
+            !document.getElementById('regReligion').value) {
+          showAlert('Sab zaroori fields fill karein!');
+          return;
+        }
+      }
+      if (from === 2) {
+        if (!document.getElementById('regEdu').value ||
+            !document.getElementById('regProf').value ||
+            !document.getElementById('regCity').value ||
+            !document.getElementById('regState').value) {
+          showAlert('Sab zaroori fields fill karein!');
+          return;
+        }
+      }
+      document.getElementById('step' + from).classList.remove('active');
+      document.getElementById('step' + (from + 1)).classList.add('active');
+      document.getElementById('dot' + from).classList.remove('active');
+      document.getElementById('dot' + from).classList.add('done');
+      document.getElementById('dot' + from).innerHTML = '✓';
+      document.getElementById('line' + from).classList.add('done');
+      document.getElementById('dot' + (from + 1)).classList.add('active');
+      currentStep = from + 1;
+    }
+
+    function prevStep(from) {
+      document.getElementById('step' + from).classList.remove('active');
+      document.getElementById('step' + (from - 1)).classList.add('active');
+      document.getElementById('dot' + from).classList.remove('active');
+      document.getElementById('dot' + (from - 1)).classList.remove('done');
+      document.getElementById('dot' + (from - 1)).classList.add('active');
+      document.getElementById('dot' + (from - 1)).innerHTML = (from - 1);
+      document.getElementById('line' + (from - 1)).classList.remove('done');
+      currentStep = from - 1;
+    }
+
+    function doRegister() {
+      clearAlert();
+      const email = document.getElementById('regEmail').value.trim();
+      const phone = document.getElementById('regPhone').value.trim();
+      const pwd = document.getElementById('regPwd').value;
+      const pwd2 = document.getElementById('regPwd2').value;
+      const terms = document.getElementById('regTerms').checked;
+
+      if (!email || !phone || !pwd || !pwd2) { showAlert('Sab fields fill karein!'); return; }
+      if (pwd !== pwd2) { showAlert('Passwords match nahi karte!'); return; }
+      if (pwd.length < 6) { showAlert('Password kam se kam 6 characters ka hona chahiye!'); return; }
+      if (!terms) { showAlert('Terms & Conditions se sahmat hona zaroori hai!'); return; }
+
+      const dob = document.getElementById('regDob').value;
+      const age = dob ? Math.floor((new Date() - new Date(dob)) / (365.25*24*3600*1000)) : 0;
+
+      const newUser = {
+        id: 'U' + Date.now(),
+        name: document.getElementById('regName').value,
+        gender: document.getElementById('regGender').value,
+        age, dob,
+        religion: document.getElementById('regReligion').value,
+        caste: document.getElementById('regCaste').value,
+        education: document.getElementById('regEdu').value,
+        profession: document.getElementById('regProf').value,
+        income: document.getElementById('regIncome').value,
+        height: document.getElementById('regHeight').value,
+        city: document.getElementById('regCity').value,
+        state: document.getElementById('regState').value,
+        email, phone, password: pwd,
+        membership: 'basic',
+        joinedAt: new Date().toISOString()
+      };
+
+      const users = JSON.parse(localStorage.getItem('rishta_users') || '[]');
+      if (users.find(u => u.email === email)) { showAlert('Is email se pehle se account registered hai!'); return; }
+      users.push(newUser);
+      localStorage.setItem('rishta_users', JSON.stringify(users));
+      localStorage.setItem('rishta_user', JSON.stringify(newUser));
+
+      showToast('Registration successful! Welcome to RishtaBandhan! 🎉');
+      setTimeout(() => window.location.href = 'dashboard.html', 1500);
+    }
+  </script>
+</body>
+</html>

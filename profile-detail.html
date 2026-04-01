@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Detail - RishtaBandhan</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo"><span class="logo-icon">❤</span><span class="logo-text">RishtaBandhan</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profiles.html" class="active">Profiles</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline">Login</a>
+        <a href="register.html" class="btn btn-primary">Register</a>
+      </div>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <div style="padding-top:73px">
+    <div style="background:var(--bg-light);padding:16px 24px;border-bottom:1px solid var(--border)">
+      <div style="max-width:1100px;margin:0 auto">
+        <a href="profiles.html" style="color:var(--text-light);font-size:0.9rem">
+          <i class="fas fa-chevron-left"></i> Wapas Profiles Par
+        </a>
+      </div>
+    </div>
+    <div id="profileDetailContent">
+      <div style="text-align:center;padding:80px;color:var(--text-light)">
+        <i class="fas fa-spinner fa-spin" style="font-size:2rem;margin-bottom:16px;display:block"></i>
+        Loading...
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/profiles-data.js"></script>
+</body>
+</html>

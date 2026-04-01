@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced Search - RishtaBandhan</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo"><span class="logo-icon">❤</span><span class="logo-text">RishtaBandhan</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profiles.html">Profiles</a></li>
+        <li><a href="search.html" class="active">Search</a></li>
+        <li><a href="success-stories.html">Success Stories</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline">Login</a>
+        <a href="register.html" class="btn btn-primary">Register</a>
+      </div>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Advanced Search</h1>
+      <p>Apni exact pasand ke hisaab se partner dhundein</p>
+    </div>
+  </div>
+
+  <div class="search-layout">
+    <!-- Filters -->
+    <aside class="search-filters">
+      <h3 style="margin-bottom:24px;color:var(--secondary)"><i class="fas fa-filter" style="color:var(--primary)"></i> Filters</h3>
+
+      <div class="filter-section">
+        <h4>Gender</h4>
+        <div class="checkbox-group">
+          <label class="checkbox-item"><input type="radio" name="gender" value="all" checked /> Sab</label>
+          <label class="checkbox-item"><input type="radio" name="gender" value="female" /> Dulhan (Female)</label>
+          <label class="checkbox-item"><input type="radio" name="gender" value="male" /> Dulha (Male)</label>
+        </div>
+      </div>
+
+      <div class="filter-section">
+        <h4>Age Range</h4>
+        <div style="display:flex;gap:12px">
+          <div style="flex:1">
+            <small style="color:var(--text-light)">Min Age</small>
+            <input type="number" id="filterAgeMin" value="21" min="18" max="60" style="width:100%;margin-top:4px;padding:8px;border:1.5px solid var(--border);border-radius:8px;font-family:Nunito,sans-serif" />
+          </div>
+          <div style="flex:1">
+            <small style="color:var(--text-light)">Max Age</small>
+            <input type="number" id="filterAgeMax" value="40" min="18" max="70" style="width:100%;margin-top:4px;padding:8px;border:1.5px solid var(--border);border-radius:8px;font-family:Nunito,sans-serif" />
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-section">
+        <h4>Religion</h4>
+        <div class="checkbox-group">
+          <label class="checkbox-item"><input type="checkbox" value="Hindu" class="religionFilter" checked /> Hindu</label>
+          <label class="checkbox-item"><input type="checkbox" value="Muslim" class="religionFilter" /> Muslim</label>
+          <label class="checkbox-item"><input type="checkbox" value="Sikh" class="religionFilter" /> Sikh</label>
+          <label class="checkbox-item"><input type="checkbox" value="Christian" class="religionFilter" /> Christian</label>
+          <label class="checkbox-item"><input type="checkbox" value="Jain" class="religionFilter" /> Jain</label>
+        </div>
+      </div>
+
+      <div class="filter-section">
+        <h4>City</h4>
+        <input type="text" id="filterCity" placeholder="Shehar darj karein..."
+          style="width:100%;padding:10px;border:1.5px solid var(--border);border-radius:8px;font-family:Nunito,sans-serif" />
+      </div>
+
+      <div class="filter-section">
+        <h4>Education</h4>
+        <div class="checkbox-group">
+          <label class="checkbox-item"><input type="checkbox" value="B.Tech" class="eduFilter" /> Engineering</label>
+          <label class="checkbox-item"><input type="checkbox" value="MBA" class="eduFilter" /> MBA</label>
+          <label class="checkbox-item"><input type="checkbox" value="MBBS" class="eduFilter" /> Doctor (MBBS)</label>
+          <label class="checkbox-item"><input type="checkbox" value="CA" class="eduFilter" /> CA</label>
+          <label class="checkbox-item"><input type="checkbox" value="LLB" class="eduFilter" /> Lawyer</label>
+        </div>
+      </div>
+
+      <div class="filter-section">
+        <h4>Marital Status</h4>
+        <div class="checkbox-group">
+          <label class="checkbox-item"><input type="checkbox" checked class="maritalFilter" value="Never Married" /> Never Married</label>
+          <label class="checkbox-item"><input type="checkbox" class="maritalFilter" value="Divorced" /> Divorced</label>
+          <label class="checkbox-item"><input type="checkbox" class="maritalFilter" value="Widowed" /> Widowed</label>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-full" onclick="applyFilters()" style="margin-bottom:10px">
+        <i class="fas fa-search"></i> Search Karein
+      </button>
+      <button class="btn btn-outline btn-full" onclick="resetFilters()">
+        <i class="fas fa-times"></i> Reset All
+      </button>
+    </aside>
+
+    <!-- Results -->
+    <div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px">
+        <p id="resultsCount" style="color:var(--text-light);font-weight:600"></p>
+        <select id="sortBy" onchange="sortProfiles()" style="padding:8px 16px;border:1.5px solid var(--border);border-radius:8px;font-family:Nunito,sans-serif">
+          <option value="default">Sort: Default</option>
+          <option value="age_asc">Age: Kam se Zyada</option>
+          <option value="age_desc">Age: Zyada se Kam</option>
+          <option value="name">Name: A-Z</option>
+        </select>
+      </div>
+      <div class="profiles-grid" id="allProfiles"></div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/profiles-data.js"></script>
+  <script>
+    // Override applyFilters for this page
+    window.applyFilters = function() {
+      const genderEl = document.querySelector('input[name="gender"]:checked');
+      const gender = genderEl ? genderEl.value : 'all';
+      const minAge = parseInt(document.getElementById('filterAgeMin').value || '18');
+      const maxAge = parseInt(document.getElementById('filterAgeMax').value || '60');
+      const city = document.getElementById('filterCity').value.toLowerCase();
+
+      const selectedReligions = [...document.querySelectorAll('.religionFilter:checked')].map(el => el.value.toLowerCase());
+      const selectedEdus = [...document.querySelectorAll('.eduFilter:checked')].map(el => el.value.toLowerCase());
+      const selectedMarital = [...document.querySelectorAll('.maritalFilter:checked')].map(el => el.value);
+
+      let filtered = PROFILES.filter(p => {
+        if (gender !== 'all' && p.gender !== gender) return false;
+        if (p.age < minAge || p.age > maxAge) return false;
+        if (city && !p.city.toLowerCase().includes(city)) return false;
+        if (selectedReligions.length > 0 && !selectedReligions.includes(p.religion.toLowerCase())) return false;
+        if (selectedEdus.length > 0 && !selectedEdus.some(e => p.education.toLowerCase().includes(e))) return false;
+        if (selectedMarital.length > 0 && !selectedMarital.includes(p.maritalStatus)) return false;
+        return true;
+      });
+
+      renderAllProfiles(filtered);
+      const count = document.getElementById('resultsCount');
+      if (count) count.textContent = `${filtered.length} profiles mile`;
+    };
+
+    function sortProfiles() {
+      applyFilters();
+    }
+
+    // Initial load
+    applyFilters();
+  </script>
+</body>
+</html>
